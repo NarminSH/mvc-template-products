@@ -1,0 +1,33 @@
+﻿@model MVC_TemplateApp.Models.ProductPhoto
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+@section productPhotoCss{
+    <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+}
+
+<h1>Create Product Photo</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" class="dropzone">
+            <div class="form-group">
+                <input type="hidden" asp-for="ProductId" class="form-control" value="@ViewBag.ProductId" />
+            </div>
+            <div class="fallback">
+                <input asp-for="Url" multiple />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section productPhotoJs{
+    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+}
